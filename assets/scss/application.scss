@@ -1,0 +1,369 @@
+/*------------------------------------------------------------------
+ [Master Stylesheet]
+
+  Project:	GST Management
+  Version:	1.1
+-------------------------------------------------------------------*/
+
+
+
+/*-------------------------------------------------------------------
+  ===== Table of Contents =====
+
+  * variables
+    + _variable.scss
+    + _customvariable.scss
+  * Typography Classes
+  * Layout Classes
+  * Common usefull classes
+  * primeNG customization
+  * Header
+  * Sidebar
+  * Authentication Pages
+    + Login Page
+    + Register Page
+    + Forgot Page
+  * Dashboard Pages
+-------------------------------------------------------------------*/
+
+/* === Import variables === */
+@import "variables";
+@import "customvariables";
+
+/* === Typography Classes === */
+h1{
+  font-size: 34px;
+}
+h2{
+  font-size: 30px;
+}
+h3{
+  font-size: 26px;
+}
+h4{
+  font-size: 24px;
+}
+h5{
+  font-size: 22px;
+}
+h6{
+  font-size: 20px;
+}
+.font-10{
+  font-size: 10px;
+}
+.font-12{
+  font-size: 12px;
+}
+.font-14{
+  font-size: 14px;
+}
+.font-16{
+  font-size: 16px;
+}
+.font-18{
+  font-size: 18px;
+}
+.font-20{
+  font-size: 20px;
+}
+.font-22{
+  font-size: 22px;
+}
+.font-24{
+  font-size: 24px;
+}
+.font-26{
+  font-size: 26px;
+}
+.font-28{
+  font-size: 28px;
+}
+.font-30{
+  font-size: 30px;
+}
+/* === Layout Classes === */
+.container-scroller {
+  height: 100vh;
+  background: $gray-100;
+  overflow: auto;
+}
+.main-panel {
+  width: calc(100% - 245px);
+  float: right;
+  padding: 60px 0;
+  .content-wrapper{
+    padding: 0 15px;
+    margin: 30px 0 0 0;
+  }
+}
+.hide-show-password{
+  position: absolute;
+  top: 1px;
+  right: 2px;
+  padding: 13px;
+  background-color: $white;
+  i{
+    position: relative;
+    top: 3px;
+    color: $gray-600;
+  }
+}
+
+/* === Common usefull classes === */
+.card-tale{
+  background-color: $tale;
+}
+.card-dark-blue{
+  background-color: $dark-blue;
+}
+.card-light-blue{
+  background-color: $light-blue;
+}
+.card-light-danger{
+  background-color: $light-danger;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+
+/* === primeNG customization === */
+// Calendar
+p-calendar {
+  .p-calendar {
+    display: block;
+    input.p-inputtext {
+      padding: 0;
+      border: none;
+      width: 100%;
+      &:focus,&:active{
+        outline: none;
+        box-shadow: none;
+      }
+    }
+    .p-button-icon-only {
+      position: absolute;
+      top: -26px;
+      right: -16px;
+      border-radius: 3px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      padding: 16px 0;
+      .p-button-icon {
+        font-size: 22px;
+      }
+    }
+    .p-datepicker {
+      position: absolute;
+      table {
+        td{
+          padding: 0;
+          .p-element{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+.p-datatable {
+  .p-datatable-thead, .p-datatable-tbody{
+    tr{
+      th{
+        background-color: $primary;
+        .p-d-flex{
+          color: $white;
+          .p-column-filter, .p-column-filter-menu-button{
+            &:hover{
+              background-color: transparent;
+            }
+            .pi{
+              color: $white;
+            }
+          }
+        }
+      }
+      th, td{
+        padding: 10px 15px;
+        .p-d-flex{
+          line-height: 1;
+        }
+      }
+    }
+  }
+  &.p-datatable-gridlines {
+    .p-paginator-bottom{
+      .p-paginator-current{
+        font-size: 14px;
+      }
+    }
+  }
+}
+/* === Header === */
+.header-wrapper{
+  box-shadow: 0 0 10px $gray-500;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  .header-logo{
+    img{
+      height: 40px;
+      margin-top: 5px;
+    }
+  }
+  .profile-dropdown{
+    .dropdown-toggle{
+      &::after{
+        display: none;
+      }
+      i{
+        background-color: $primar-50;
+        padding: 10px;
+      }
+    }
+    img{
+      height: 40px;
+      width: 40px;
+    }
+  }
+  .dropdown-menu {
+    top: 43px !important;
+    box-shadow: 0 0 10px $gray-500;
+    .dropdown-item{
+      i{
+        color: $gray-600;
+      }
+      span{
+        margin-top: 2px;
+      }
+    }
+  }
+}
+
+/* === Authentication Pages === */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  z-index: 14;
+  background-color: $white;
+  .menu-wrapper {
+    margin-top: 60px;
+    .nav-item{
+      cursor: pointer;
+      float: left;
+      width: 100%;
+      margin-bottom: 5px;
+      &.active{
+        .nav-link{
+          background-color: $primary;
+          i, span, &::before{
+            color: $white;
+          }
+        }
+        &.dropdown{
+          .nav-link{
+            &.dropdown-toggle{
+              &::before{
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+      &.dropdown{
+        .dropdown-toggle{
+          &::after{
+            display: none;
+          }
+          &::before{
+            font-family: "remixicon";
+            content: "\ea6e";
+            font-size: 20px;
+            position: absolute;
+            right: 10px;
+            top: 15px;
+            color: $gray-600;
+          }
+        }
+      }
+      .nav-link{
+        float: left;
+        width: 100%;
+        color: $gray-600;
+        border-radius: 10px;
+        padding: 15px;
+        i{
+          font-size: 20px;
+          float: left;
+          margin-right: 15px;
+        }
+        .menu-title{
+          float: left;
+          margin-top: 3px;
+        }
+         &:hover, &:focus, &:focus:active{
+          background-color: $primary;
+          i, span, &::before{
+            color: $white;
+          }
+        }
+      }
+      .nav-link[aria-expanded='true']{
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        background-color: $primary;
+        color: $white;
+        &::before{     
+          color: $white;
+        }
+      }
+      .dropdown-menu{
+        position: relative !important;
+        float: left;
+        top: -60px !important;
+        background-color: $primary;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding-left: 19px;
+        li{
+          padding: 5px 0;
+          &::before{
+            content: '';
+            width: 5px;
+            height: 5px;
+            position: absolute;
+            margin-top: 9px;
+            border-radius: 50%;
+            background: $white;
+          }
+          a{
+            padding: 5px 15px;
+            background-color: $primary;
+            color: $white;
+            font-size: 14px;
+            &:hover, &:focus, &:focus:active, &:active{
+              text-decoration: underline
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* === Authentication Pages === */
+// Login Page
+.login-wrapper{
+  width: 500px;
+  margin: 50px auto;
+  .brand-logo{
+    img{
+      width: 200px;
+    }
+  }
+}
+/* === Dashboard Pages === */

@@ -1,0 +1,112 @@
+/* http://pedepankaj.com/ 
+   v1.0 | 1.1.1
+   License: none (public domain)
+*/
+@import "fonts.scss";
+@import "variables";
+html, body, div, span, applet, object, iframe,
+p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-family: $gstmanager-Light;
+	vertical-align: baseline;
+	line-height: 22px;
+}
+h1,h2,h3,h4,h5,h6{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+    font-family: $gstmanager-Regular;
+	vertical-align: baseline;
+}
+a{
+    text-decoration: none;
+    color: $primary;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	background-color: $gray-100;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+// Bootstrap reset 
+.form-floating > .form-control, 
+.form-floating > .form-select,
+.form-floating label{
+    line-height: 23px;
+    padding: 1rem;
+}
+.btn-primary{
+    color: $white;
+    background-color: $primary;
+    border-color: $primary;
+    &:hover, &:focus, &:focus:active{
+        background-color: $primary;
+        border-color: $primary;
+        opacity: 0.9;
+    }
+}
+.btn-lg{
+    border-radius: 15px;
+    padding: 1rem 3rem;
+}
+.form-floating{
+    margin-bottom: 30px;
+	.form-control:focus, .form-control:active{
+		outline: none;
+		box-shadow: none;
+		border: 1px solid $primary;
+		color: $primary;
+		font-weight: 700;
+	}
+	.form-control:focus + label{
+		color: $primary;
+	}
+}
+.radius-adjust, .card{
+	border-radius: 20px;
+}
+.card{
+	border: none;
+	&:hover,&:focus, &:active,&:focus:active{
+		opacity: 0.8;
+	}
+	.card-body{
+		padding: 1.25rem;
+	}
+}
+.fw-bold{
+	font-family: $gstmanager-SemiBold;
+}
